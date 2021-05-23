@@ -1,12 +1,15 @@
-package me.krymz0n.limitredstone.listener;
+package me.krymz0n.redstonelimiter.listener;
 
-import me.krymz0n.limitredstone.Main;
+import me.krymz0n.redstonelimiter.Main;
+import me.krymz0n.redstonelimiter.util.Utils;
 import org.bukkit.Chunk;
 import org.bukkit.Material;
+import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPlaceEvent;
+import org.bukkit.event.block.BlockRedstoneEvent;
 import org.bukkit.event.world.ChunkLoadEvent;
 
 public class Redstone implements Listener {
@@ -25,7 +28,7 @@ public class Redstone implements Listener {
                 if (plugin.checkChunk(Material.REDSTONE_WIRE, c) > plugin.getConfig().getInt("MaxRedstonePerChunk")) {
                     evt.setCancelled(true);
                     if (plugin.getConfig().getBoolean("Debug")) {
-                        System.out.println("Prevented" + p.getName() + " from placing more redstone than allowed");
+                        System.out.println(Utils.chat("&4RedstoneLimiter &0Prevented &4" + p.getName() + " &0from placing more redstone than allowed"));
                     }
                 }
             }
@@ -46,6 +49,17 @@ public class Redstone implements Listener {
                         }
                     }
                 }
+            }
+        }
+    }
+
+    @EventHandler
+    public void onBlockRedstoneEvent(BlockRedstoneEvent evt) {
+        if (plugin.getConfig().getBoolean("DisableRedstoneAtMaxPerChunk")) {
+            Chunk c = evt.getBlock().getChunk();
+            Block b = evt.getBlock();
+            if (plugin.checkChunk(Material.REDSTONE_WIRE, c) > plugin.getConfig().getInt("MaxRedstonePerChunk")) {
+                evt.setNewCurrent(0);
             }
         }
     }

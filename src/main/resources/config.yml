@@ -13,3 +13,6 @@ MaxRedstonePerChunk: 40
 # Debug mode! By default this is disabled since it can cause a lot of flood into your console. If you are a small server, you can turn this on though!
 # It allows you to see who might be trying to exploit redstone on your server!
 Debug: false
+
+# This will disable redstone currents if it is more than your max redstone per chunk!
+DisableRedstoneAtMaxPerChunk: true

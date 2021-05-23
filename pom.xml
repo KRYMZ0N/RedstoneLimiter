@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>me.krymz0n</groupId>
-    <artifactId>LimitRedstone</artifactId>
-    <version>1.0</version>
+    <artifactId>RedstoneLimiter</artifactId>
+    <version>1.1</version>
     <packaging>jar</packaging>
 
-    <name>LimitRedstone</name>
+    <name>RedstoneLimiter</name>
 
     <description>A plugin designed to limit the amount of redstone per chunk</description>
     <properties>

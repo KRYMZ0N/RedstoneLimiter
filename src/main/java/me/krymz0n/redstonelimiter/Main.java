@@ -1,6 +1,7 @@
-package me.krymz0n.limitredstone;
+package me.krymz0n.redstonelimiter;
 
-import me.krymz0n.limitredstone.listener.Redstone;
+import me.krymz0n.redstonelimiter.listener.Redstone;
+import me.krymz0n.redstonelimiter.util.Utils;
 import org.bukkit.Chunk;
 import org.bukkit.Material;
 import org.bukkit.event.Listener;
@@ -13,8 +14,9 @@ public final class Main extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
         saveDefaultConfig();
-        System.out.println("Enabling!");
-
+        System.out.println(Utils.chat("&4Enabling RedstoneLimiter &0v" + this.getDescription().getVersion()));
+        //Event Registrations!
+        System.out.println(Utils.chat("&4Registering Events"));
         PluginManager pm = getServer().getPluginManager();
         pm.registerEvents(this, this);
         pm.registerEvents(new Redstone(this), this);
@@ -23,7 +25,7 @@ public final class Main extends JavaPlugin implements Listener {
 
     @Override
     public void onDisable() {
-        System.out.println("Disabling!");
+        System.out.println("&4Disabling RedstoneLimiter &0v" + this.getDescription().getVersion());
     }
 
     public Integer checkChunk(Material m, Chunk c) {
