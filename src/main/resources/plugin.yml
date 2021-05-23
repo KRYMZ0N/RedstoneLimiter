@@ -1,0 +1,6 @@
+name: LimitRedstone
+version: ${project.version}
+main: me.krymz0n.limitredstone.Main
+authors: [ KRYMZ0N ]
+description: A plugin designed to limit the amount of redstone per chunk
+website: 3b3t.me

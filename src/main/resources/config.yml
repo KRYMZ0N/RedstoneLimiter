@@ -1,0 +1,10 @@
+# config for LimitRedstone Plugin
+
+# This will remove redstone on chunkload if it is over the limit you set!
+LimitRedstoneOnChunkLoad: true
+
+# This will prevent redstone from bring placed if there is more than your limit!
+LimitRedstonePlaced: true
+
+# Max Redstone per chunk!
+MaxRedstonePerChunk: 20
