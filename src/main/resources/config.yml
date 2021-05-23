@@ -1,10 +1,15 @@
 # config for LimitRedstone Plugin
 
-# This will remove redstone on chunkload if it is over the limit you set!
-LimitRedstoneOnChunkLoad: true
+# This will remove redstone on chunkload if it is over the limit you set! By default I have this disabled since it could mess with players current redstone contraptions.
+# However if this is enabled it can remove preexisting redstone lag machines!
+LimitRedstoneOnChunkLoad: false
 
 # This will prevent redstone from bring placed if there is more than your limit!
 LimitRedstonePlaced: true
 
-# Max Redstone per chunk!
-MaxRedstonePerChunk: 20
+# Max Redstone per chunk! I highly advise you to change this since It could either be too high or too low!
+MaxRedstonePerChunk: 40
+
+# Debug mode! By default this is disabled since it can cause a lot of flood into your console. If you are a small server, you can turn this on though!
+# It allows you to see who might be trying to exploit redstone on your server!
+Debug: false
