@@ -12,6 +12,7 @@ public final class Main extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
+        saveDefaultConfig();
         System.out.println("Enabling!");
 
         PluginManager pm = getServer().getPluginManager();
@@ -25,12 +26,15 @@ public final class Main extends JavaPlugin implements Listener {
         System.out.println("Disabling!");
     }
 
-    public int count(Chunk c, Material m) {
+    public Integer checkChunk(Material m, Chunk c) {
         int count = 0;
-        for (int x = 0; x < 16; x++) {
-            for (int y = 0; y < 256; y++) {
-                for (int z = 0; z < 16; z++) {
-                    if (c.getBlock(x, y , z).getType() == m) {
+        int cx = c.getX() << 4;
+        int cz = c.getZ() << 4;
+
+        for (int x = cx; x < cx + 16; x++) {
+            for (int z = cz; z < cz + 16; z++) {
+                for (int y = 0; y < 256; y++) {
+                    if (c.getBlock(x, y, z).getType() == m) {
                         count++;
                     }
                 }
@@ -39,3 +43,4 @@ public final class Main extends JavaPlugin implements Listener {
         return count;
     }
 }
+
