@@ -1,4 +1,5 @@
 # config for LimitRedstone Plugin
+# To reload the config, please use /RLimiter reload!
 
 # This will remove redstone on chunkload if it is over the limit you set! By default I have this disabled since it could mess with players current redstone contraptions.
 # However if this is enabled it can remove preexisting redstone lag machines!

@@ -4,3 +4,7 @@ main: me.krymz0n.redstonelimiter.Main
 authors: [ KRYMZ0N ]
 description: A plugin designed to limit the amount of redstone per chunk
 website: 3b3t.me
+
+commands:
+  rlimiter:
+    description: a

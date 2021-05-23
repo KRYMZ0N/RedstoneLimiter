@@ -1,5 +1,6 @@
 package me.krymz0n.redstonelimiter;
 
+import me.krymz0n.redstonelimiter.command.Reload;
 import me.krymz0n.redstonelimiter.listener.Redstone;
 import me.krymz0n.redstonelimiter.util.Utils;
 import org.bukkit.Chunk;
@@ -20,6 +21,8 @@ public final class Main extends JavaPlugin implements Listener {
         PluginManager pm = getServer().getPluginManager();
         pm.registerEvents(this, this);
         pm.registerEvents(new Redstone(this), this);
+
+        getCommand("rlimiter").setExecutor(new Reload(this));
 
     }
 
