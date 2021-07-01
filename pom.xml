@@ -16,7 +16,7 @@
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    <url>3b3t.me</url>
+    <url>www.3b3t.me</url>
 
     <build>
         <plugins>
