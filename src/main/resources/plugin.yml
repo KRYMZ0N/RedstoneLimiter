@@ -1,4 +1,4 @@
-name: LimitRedstone
+name: RedstoneLimiter
 version: ${project.version}
 main: me.krymz0n.redstonelimiter.Main
 authors: [ KRYMZ0N ]

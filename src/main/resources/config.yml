@@ -1,7 +1,7 @@
 # config for LimitRedstone Plugin
 # To reload the config, please use /RLimiter reload!
 
-# This will remove redstone on chunkload if it is over the limit you set! By default I have this disabled since it could mess with players current redstone contraptions.
+# This will remove redstone on chunkload if it is over the limit you set! By default I have this disabled since it could mess with players current redstone contraptions. It can also cause lag, so enable at yuur own risk.
 # However if this is enabled it can remove preexisting redstone lag machines!
 LimitRedstoneOnChunkLoad: false
 
@@ -9,7 +9,7 @@ LimitRedstoneOnChunkLoad: false
 LimitRedstonePlaced: true
 
 # Max Redstone per chunk! I highly advise you to change this since It could either be too high or too low!
-MaxRedstonePerChunk: 40
+MaxRedstonePerChunk: 24
 
 # Debug mode! By default this is disabled since it can cause a lot of flood into your console. If you are a small server, you can turn this on though!
 # It allows you to see who might be trying to exploit redstone on your server!
@@ -17,3 +17,7 @@ Debug: false
 
 # This will disable redstone currents if it is more than your max redstone per chunk!
 DisableRedstoneAtMaxPerChunk: true
+
+# This prevents the rail update lag exploit by breaking the rails if they update too many times in a second.
+PreventRailUpdateLag: true
+DelayOfRailClock: 1

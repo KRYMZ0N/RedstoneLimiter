@@ -10,6 +10,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.block.BlockRedstoneEvent;
+import org.bukkit.event.entity.EntityInteractEvent;
 import org.bukkit.event.world.ChunkLoadEvent;
 
 public class Redstone implements Listener {
@@ -57,9 +58,11 @@ public class Redstone implements Listener {
     public void onBlockRedstoneEvent(BlockRedstoneEvent evt) {
         if (plugin.getConfig().getBoolean("DisableRedstoneAtMaxPerChunk")) {
             Chunk c = evt.getBlock().getChunk();
-            Block b = evt.getBlock();
-            if (plugin.checkChunk(Material.REDSTONE_WIRE, c) > plugin.getConfig().getInt("MaxRedstonePerChunk")) {
-                evt.setNewCurrent(0);
+            if (evt.getNewCurrent() > evt.getOldCurrent()) {
+                if (plugin.checkChunk(Material.REDSTONE_WIRE, c) > plugin.getConfig().getInt("MaxRedstonePerChunk")) {
+                    int current = evt.getOldCurrent();
+                    evt.setNewCurrent(current);
+                }
             }
         }
     }
